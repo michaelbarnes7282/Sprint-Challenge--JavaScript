@@ -25,11 +25,17 @@ cuboid = new CuboidMaker(4, 5, 5)
 console.log(cuboid.volume()); // 100
 console.log(cuboid.surfaceArea()); // 130
 
-// class CubeMaker extends CuboidMaker{
-//     constructor(length, width, height){
-//     super(length, width, height)
-//     }
-//     volume(length,width,height){
-//         return 
-//     }
-// }
+class CubeMaker extends CuboidMaker {
+    constructor(length, width, height) {
+        super(length, width, height)
+    }
+    cubeVolume(length) {
+        return Math.pow(this.length,3);
+    }
+    cubeSurfaceArea(length) {
+        return 6 * Math.pow(this.length, 2);
+    }
+}
+cube = new CubeMaker(5,5,5);
+console.log(cube.cubeVolume());
+console.log(cube.cubeSurfaceArea());
